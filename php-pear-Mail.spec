@@ -25,7 +25,7 @@ useful in multiple mailer backends. Currently supported are native PHP
 mail() function, sendmail and SMTP. This package also provides a RFC
 822 Email address list validation utility class.
 
-This class has in PEAR status: %{_status}.
+In PEAR status of this package is: %{_status}.
 
 %description -l pl
 Klasa Mail:: definiuje w hierarchii PEAR interfejs do implementowania
