@@ -7,7 +7,7 @@ Summary:	%{_pearname} - Class that provides multiple interfaces for sending emai
 Summary(pl):	%{_pearname} - Klasa daj±ca interfejsy do wysy³ania poczty
 Name:		php-pear-%{_pearname}
 Version:	1.1.4
-Release:	1
+Release:	2
 License:	PHP/BSD
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
