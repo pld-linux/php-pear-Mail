@@ -9,8 +9,8 @@ Release:	1
 License:	PHP 2.02
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
-BuildRequires:	rpm-php-pearprov
 URL:		http://pear.php.net/
+BuildRequires:	rpm-php-pearprov
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -22,6 +22,11 @@ mail() function, sendmail and SMTP. This package also provides a RFC
 822 Email address list validation utility class.
 
 %description -l pl
+Klasa Mail:: definiuje w hierarchii PEAR interfejs do implementowania
+wysy³ania poczty oraz udostêpnia funkcje pomocnicze przydatne w wielu
+backendach do obs³ugi poczty. Aktualnie obs³ugiwane sposoby to natywna
+dla PHP funkcja mail(), sendmail oraz SMTP. Ten pakiet zawiera tak¿e
+klasê sprawdzaj±c± zgodno¶æ list adresów z RFC 822.
 
 %prep
 %setup -q -c
