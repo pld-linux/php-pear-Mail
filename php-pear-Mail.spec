@@ -1,8 +1,8 @@
 %include	/usr/lib/rpm/macros.php
 %define		_class		Mail
 %define		_pearname	%{_class}
-Summary:	%{_class} - Class that provides multiple interfaces for sending emails
-Summary(pl):	%{_class} - Klasa daj±ca interfejsy do wysy³ania poczty
+Summary:	%{_pearname} - Class that provides multiple interfaces for sending emails
+Summary(pl):	%{_pearname} - Klasa daj±ca interfejsy do wysy³ania poczty
 Name:		php-pear-%{_pearname}
 Version:	1.0.1
 Release:	1
