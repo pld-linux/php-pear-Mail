@@ -1,17 +1,16 @@
 %include	/usr/lib/rpm/macros.php
 %define		_class		Mail
 %define		_status		stable
-
 %define		_pearname	%{_class}
 Summary:	%{_pearname} - Class that provides multiple interfaces for sending emails
 Summary(pl):	%{_pearname} - Klasa daj±ca interfejsy do wysy³ania poczty
 Name:		php-pear-%{_pearname}
-Version:	1.1.0
+Version:	1.1.1
 Release:	1
-License:	PHP 2.02/BSD
+License:	PHP/BSD
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
-# Source0-md5:	bc62981c39727521c2f0749a75872772
+# Source0-md5:	17cb9b091f5c0fe24bc126a3954e0edb
 URL:		http://pear.php.net/
 BuildRequires:	rpm-php-pearprov >= 4.0.2-98
 Requires:	php-pear
