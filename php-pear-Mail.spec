@@ -1,11 +1,13 @@
 %include	/usr/lib/rpm/macros.php
 %define		_class		Mail
+%define		_status		stable
+
 %define		_pearname	%{_class}
 Summary:	%{_pearname} - Class that provides multiple interfaces for sending emails
 Summary(pl):	%{_pearname} - Klasa daj±ca interfejsy do wysy³ania poczty
 Name:		php-pear-%{_pearname}
 Version:	1.0.2
-Release:	1
+Release:	2
 License:	PHP 2.02/BSD
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
@@ -22,12 +24,16 @@ useful in multiple mailer backends. Currently supported are native PHP
 mail() function, sendmail and SMTP. This package also provides a RFC
 822 Email address list validation utility class.
 
+This class has in PEAR status: %{_status}.
+
 %description -l pl
 Klasa Mail:: definiuje w hierarchii PEAR interfejs do implementowania
 wysy³ania poczty oraz udostêpnia funkcje pomocnicze przydatne w wielu
 backendach do obs³ugi poczty. Aktualnie obs³ugiwane sposoby to natywna
 dla PHP funkcja mail(), sendmail oraz SMTP. Ten pakiet zawiera tak¿e
 klasê sprawdzaj±c± zgodno¶æ list adresów z RFC 822.
+
+Ta klasa ma w PEAR status: %{_status}.
 
 %prep
 %setup -q -c
@@ -44,5 +50,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
+%dir %{php_pear_dir}/%{_class}
 %{php_pear_dir}/*.php
 %{php_pear_dir}/%{_class}/*.php
