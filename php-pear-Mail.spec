@@ -6,17 +6,20 @@
 Summary:	%{_pearname} - Class that provides multiple interfaces for sending emails
 Summary(pl):	%{_pearname} - Klasa daj±ca interfejsy do wysy³ania poczty
 Name:		php-pear-%{_pearname}
-Version:	1.1.8
-Release:	1.2
+Version:	1.1.9
+Release:	1
 License:	PHP/BSD
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
-# Source0-md5:	69b1941019b686227123a879090241ab
+# Source0-md5:	ce8dcb33a9ad9ea7072ca0175fd4ce8f
 URL:		http://pear.php.net/package/Mail/
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
 Requires:	php-pear
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+# exclude optional dependencies
+%define		_noautoreq	'pear(Net/SMTP.*)'
 
 %description
 The PEAR's Mail:: interface, defines the interface for implementing
@@ -55,6 +58,11 @@ install -d $RPM_BUILD_ROOT%{php_pear_dir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
+
+%post
+if [ -f %{_docdir}/%{name}-%{version}/optional-packages.txt ]; then
+	cat %{_docdir}/%{name}-%{version}/optional-packages.txt
+fi
 
 %files
 %defattr(644,root,root,755)
