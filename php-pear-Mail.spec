@@ -52,7 +52,6 @@ Tests for PEAR::%{_pearname}.
 Testy dla PEAR::%{_pearname}.
 
 %prep
-%setup -q -c
 %pear_package_setup
 
 %install
