@@ -2,12 +2,11 @@
 %define		_class		Mail
 %define		_status		stable
 %define		_pearname	%{_class}
-
 Summary:	%{_pearname} - Class that provides multiple interfaces for sending emails
 Summary(pl):	%{_pearname} - Klasa daj±ca interfejsy do wysy³ania poczty
 Name:		php-pear-%{_pearname}
 Version:	1.1.9
-Release:	2
+Release:	3
 Epoch:		0
 License:	PHP/BSD
 Group:		Development/Languages/PHP
