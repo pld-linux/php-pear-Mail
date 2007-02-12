@@ -3,7 +3,7 @@
 %define		_status		stable
 %define		_pearname	%{_class}
 Summary:	%{_pearname} - Class that provides multiple interfaces for sending emails
-Summary(pl):	%{_pearname} - Klasa daj±ca interfejsy do wysy³ania poczty
+Summary(pl.UTF-8):   %{_pearname} - Klasa dajÄ…ca interfejsy do wysyÅ‚ania poczty
 Name:		php-pear-%{_pearname}
 Version:	1.1.14
 Release:	2
@@ -32,18 +32,18 @@ mail() function, sendmail and SMTP. This package also provides a RFC
 
 In PEAR status of this package is: %{_status}.
 
-%description -l pl
+%description -l pl.UTF-8
 Klasa Mail:: definiuje w hierarchii PEAR interfejs do implementowania
-wysy³ania poczty oraz udostêpnia funkcje pomocnicze przydatne w wielu
-backendach do obs³ugi poczty. Aktualnie obs³ugiwane sposoby to natywna
-dla PHP funkcja mail(), sendmail oraz SMTP. Ten pakiet zawiera tak¿e
-klasê sprawdzaj±c± zgodno¶æ list adresów z RFC 822.
+wysyÅ‚ania poczty oraz udostÄ™pnia funkcje pomocnicze przydatne w wielu
+backendach do obsÅ‚ugi poczty. Aktualnie obsÅ‚ugiwane sposoby to natywna
+dla PHP funkcja mail(), sendmail oraz SMTP. Ten pakiet zawiera takÅ¼e
+klasÄ™ sprawdzajÄ…cÄ… zgodnoÅ›Ä‡ list adresÃ³w z RFC 822.
 
 Ta klasa ma w PEAR status: %{_status}.
 
 %package tests
 Summary:	Tests for PEAR::%{_pearname}
-Summary(pl):	Testy dla PEAR::%{_pearname}
+Summary(pl.UTF-8):   Testy dla PEAR::%{_pearname}
 Group:		Development/Languages/PHP
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 AutoReq:	no
@@ -52,7 +52,7 @@ AutoProv:	no
 %description tests
 Tests for PEAR::%{_pearname}.
 
-%description tests -l pl
+%description tests -l pl.UTF-8
 Testy dla PEAR::%{_pearname}.
 
 %prep
