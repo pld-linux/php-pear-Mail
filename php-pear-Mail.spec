@@ -3,7 +3,7 @@
 %define		_status		stable
 %define		_pearname	%{_class}
 Summary:	%{_pearname} - Class that provides multiple interfaces for sending emails
-Summary(pl.UTF-8):   %{_pearname} - Klasa dająca interfejsy do wysyłania poczty
+Summary(pl.UTF-8):	%{_pearname} - Klasa dająca interfejsy do wysyłania poczty
 Name:		php-pear-%{_pearname}
 Version:	1.1.14
 Release:	2
@@ -43,7 +43,7 @@ Ta klasa ma w PEAR status: %{_status}.
 
 %package tests
 Summary:	Tests for PEAR::%{_pearname}
-Summary(pl.UTF-8):   Testy dla PEAR::%{_pearname}
+Summary(pl.UTF-8):	Testy dla PEAR::%{_pearname}
 Group:		Development/Languages/PHP
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 AutoReq:	no
