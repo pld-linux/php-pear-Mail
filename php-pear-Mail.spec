@@ -6,12 +6,13 @@ Summary:	%{_pearname} - Class that provides multiple interfaces for sending emai
 Summary(pl.UTF-8):	%{_pearname} - Klasa dająca interfejsy do wysyłania poczty
 Name:		php-pear-%{_pearname}
 Version:	1.1.14
-Release:	2
+Release:	3
 Epoch:		0
 License:	PHP/BSD
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
 # Source0-md5:	e50da58b6b787b3903ce4d07dc791bb2
+Patch0:		%{name}-strict.patch
 URL:		http://pear.php.net/package/Mail/
 BuildRequires:	php-pear-PEAR
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
@@ -57,6 +58,7 @@ Testy dla PEAR::%{_pearname}.
 
 %prep
 %pear_package_setup
+%patch0 -p1
 
 %install
 rm -rf $RPM_BUILD_ROOT
