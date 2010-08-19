@@ -5,14 +5,12 @@
 Summary:	%{_pearname} - Class that provides multiple interfaces for sending emails
 Summary(pl.UTF-8):	%{_pearname} - Klasa dająca interfejsy do wysyłania poczty
 Name:		php-pear-%{_pearname}
-Version:	1.1.14
-Release:	4
-Epoch:		0
+Version:	1.2.0
+Release:	1
 License:	PHP/BSD
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
-# Source0-md5:	e50da58b6b787b3903ce4d07dc791bb2
-Patch0:		%{name}-strict.patch
+# Source0-md5:	1bb2c88905f255490c4706b5394c2036
 URL:		http://pear.php.net/package/Mail/
 BuildRequires:	php-pear-PEAR
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
@@ -22,7 +20,7 @@ BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 # exclude optional dependencies
-%define		_noautoreq	'pear(Net/SMTP.*)'
+%define		_noautoreq	pear(Net/SMTP.*)
 
 %description
 The PEAR's Mail:: interface, defines the interface for implementing
@@ -46,7 +44,7 @@ Ta klasa ma w PEAR status: %{_status}.
 Summary:	Tests for PEAR::%{_pearname}
 Summary(pl.UTF-8):	Testy dla PEAR::%{_pearname}
 Group:		Development/Languages/PHP
-Requires:	%{name} = %{epoch}:%{version}-%{release}
+Requires:	%{name} = %{version}-%{release}
 AutoReq:	no
 AutoProv:	no
 
@@ -58,7 +56,6 @@ Testy dla PEAR::%{_pearname}.
 
 %prep
 %pear_package_setup
-%patch0 -p1
 
 %install
 rm -rf $RPM_BUILD_ROOT
