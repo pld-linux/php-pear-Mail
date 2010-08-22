@@ -5,23 +5,23 @@
 Summary:	%{_pearname} - Class that provides multiple interfaces for sending emails
 Summary(pl.UTF-8):	%{_pearname} - Klasa dająca interfejsy do wysyłania poczty
 Name:		php-pear-%{_pearname}
-Version:	1.1.14
-Release:	2
-Epoch:		0
+Version:	1.2.0
+Release:	3
 License:	PHP/BSD
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
-# Source0-md5:	e50da58b6b787b3903ce4d07dc791bb2
+# Source0-md5:	1bb2c88905f255490c4706b5394c2036
 URL:		http://pear.php.net/package/Mail/
 BuildRequires:	php-pear-PEAR
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
-BuildRequires:	rpmbuild(macros) >= 1.300
-Requires:	php-pear
+BuildRequires:	rpmbuild(macros) >= 1.571
+Requires:	php-pear >= 4:1.3-6
+Suggests:	php-pear-Net_SMTP
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 # exclude optional dependencies
-%define		_noautoreq	'pear(Net/SMTP.*)'
+%define		_noautoreq	pear(Net/SMTP.*)
 
 %description
 The PEAR's Mail:: interface, defines the interface for implementing
@@ -45,9 +45,9 @@ Ta klasa ma w PEAR status: %{_status}.
 Summary:	Tests for PEAR::%{_pearname}
 Summary(pl.UTF-8):	Testy dla PEAR::%{_pearname}
 Group:		Development/Languages/PHP
-Requires:	%{name} = %{epoch}:%{version}-%{release}
-AutoReq:	no
+Requires:	%{name} = %{version}-%{release}
 AutoProv:	no
+AutoReq:	no
 
 %description tests
 Tests for PEAR::%{_pearname}.
@@ -66,18 +66,15 @@ install -d $RPM_BUILD_ROOT%{php_pear_dir}
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post
-if [ -f %{_docdir}/%{name}-%{version}/optional-packages.txt ]; then
-	cat %{_docdir}/%{name}-%{version}/optional-packages.txt
-fi
+%post -p <lua>
+%pear_package_print_optionalpackages
 
 %files
 %defattr(644,root,root,755)
 %doc install.log optional-packages.txt
 %{php_pear_dir}/.registry/*.reg
-%dir %{php_pear_dir}/%{_class}
-%{php_pear_dir}/*.php
-%{php_pear_dir}/%{_class}/*.php
+%{php_pear_dir}/Mail.php
+%{php_pear_dir}/Mail/*
 
 %files tests
 %defattr(644,root,root,755)
