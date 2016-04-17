@@ -4,7 +4,7 @@ Summary:	%{pearname} - Class that provides multiple interfaces for sending email
 Summary(pl.UTF-8):	%{pearname} - Klasa dająca interfejsy do wysyłania poczty
 Name:		php-pear-%{pearname}
 Version:	1.3.0
-Release:	1
+Release:	2
 License:	PHP/BSD
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{pearname}-%{version}.tgz
