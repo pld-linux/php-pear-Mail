@@ -3,12 +3,12 @@
 Summary:	%{pearname} - Class that provides multiple interfaces for sending emails
 Summary(pl.UTF-8):	%{pearname} - Klasa dająca interfejsy do wysyłania poczty
 Name:		php-pear-%{pearname}
-Version:	1.3.0
-Release:	2
+Version:	1.4.1
+Release:	1
 License:	PHP/BSD
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{pearname}-%{version}.tgz
-# Source0-md5:	55ddd9fa33c72cc1720a986678e3499b
+# Source0-md5:	23dd52d1323485d1e5f81c0816cd06cc
 URL:		http://pear.php.net/package/Mail/
 BuildRequires:	php-pear-PEAR
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
@@ -47,12 +47,9 @@ install -d $RPM_BUILD_ROOT%{php_pear_dir}
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post -p <lua>
-%pear_package_print_optionalpackages
-
 %files
 %defattr(644,root,root,755)
-%doc install.log optional-packages.txt
+%doc install.log
 %{php_pear_dir}/.registry/*.reg
 %{php_pear_dir}/Mail.php
 %{php_pear_dir}/Mail/*
