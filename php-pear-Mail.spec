@@ -1,5 +1,4 @@
 %define		pearname Mail
-%include	/usr/lib/rpm/macros.php
 Summary:	%{pearname} - Class that provides multiple interfaces for sending emails
 Summary(pl.UTF-8):	%{pearname} - Klasa dająca interfejsy do wysyłania poczty
 Name:		php-pear-%{pearname}
